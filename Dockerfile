@@ -7,6 +7,6 @@ RUN make build TARGETARCH=$TARGETARCH
 
 FROM scratch
 WORKDIR /
-COPY --from=builder /go/src/app/mbot .
+COPY --from=builder /go/src/app/kbot .
 COPY --from=alpine:latest /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-ENTRYPOINT ["./mbot", "start_bot"]
+ENTRYPOINT ["./kbot", "start_bot"]
